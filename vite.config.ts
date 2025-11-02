@@ -6,6 +6,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte';
 // https://vite.dev/config/
 export default defineConfig({ plugins: [tailwindcss(), svelte()] , resolve: {
     alias: {
-  $lib: path.resolve(__dirname, "./src/lib"), // Add __dirname
+  $lib: path.resolve(__dirname, "./src/lib"), 
+  $src: path.resolve(__dirname, "./src"),// Add __dirname
 },
   },});

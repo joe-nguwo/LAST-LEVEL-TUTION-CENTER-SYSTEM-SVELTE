@@ -1,22 +1,28 @@
 <script lang="ts">
-    import{Route} from "svelte-routing"
+    import{Router,Route} from "svelte-routing"
+     // import {Router} from "svelte-routing"
     import SideBar from "./layout/sideBar.svelte"
     import LoginPage from "./pages/login/Login.svelte"
-    import Dashboard from  "./pages/dashboard/index.svelte"
+    import Dashboard from  "$src/pages/dashboard/index.svelte"
+
+    let  isauth = false;
 
 </script>
 <main>
-   <!-- public routes -->
-    <Route path="/login">
+    <Router>
+   {#if !isauth }
+    <Route path="/" exact>
           <LoginPage />
     </Route>
-  
 
-    <!-- private routes-->
+    {:else}
+  
      <SideBar>
-         <Route path="/dashboard">
+         <Route path="/dashboard" exact>
             <Dashboard/>
         </Route>
      </SideBar>
 
+     {/if}
+    </Router>
 </main>

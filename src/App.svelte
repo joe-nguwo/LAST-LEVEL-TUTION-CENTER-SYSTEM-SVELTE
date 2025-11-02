@@ -1,6 +1,6 @@
 <script lang="ts">
   import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
-  import {Router} from "svelte-routing"
+ // import {Router} from "svelte-routing"
   import App2 from "./App2.svelte";
 
   const queryClient = new QueryClient()
@@ -11,9 +11,9 @@
 
 <main>
   <QueryClientProvider client={queryClient}>
-    <Router>
+    <!-- <Router> -->
           <App2/>
-    </Router>
+    <!-- </Router> -->
   </QueryClientProvider>
 
 </main>

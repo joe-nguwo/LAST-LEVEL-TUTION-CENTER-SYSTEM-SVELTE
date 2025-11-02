@@ -5,7 +5,7 @@ export default {
   preprocess: vitePreprocess(),
   kit: {
     alias: {
-      $lib: './src/lib',
+      $src: './src/lib',
     }
   }
 };

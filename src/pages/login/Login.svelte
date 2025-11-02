@@ -3,7 +3,7 @@
   import { Input } from "$lib/components/ui/input/index.ts";
   import { Button } from "$lib/components/ui/button/index.ts";
   import { Mail, Lock }   from '@lucide/svelte';;
-  import type { LoginForm } from "src/types/auth.ts";
+  import type { LoginForm } from "@src/types/auth.ts";
 
   let form: LoginForm = $state({
     email: "",
