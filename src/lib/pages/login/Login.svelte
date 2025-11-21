@@ -1,19 +1,42 @@
 <script lang="ts">
+  import {Link}  from "svelte-routing"
+  import { createMutation } from "@tanstack/svelte-query";
   import { Root, Header, Title, Description, Content, Footer } from "$lib/components/ui/card/index.ts";
   import { Input } from "$lib/components/ui/input/index.ts";
   import { Button } from "$lib/components/ui/button/index.ts";
   import { Mail, Lock }   from '@lucide/svelte';;
-  import type { LoginForm } from "@src/types/auth.ts";
+  import type { LoginForm } from "@lib/types/auth.ts";
+  //import Auth from "../.."
+  
 
   let form: LoginForm = $state({
     email: "",
     password: ""
   });
 
+  function api (){
+
+  }
+
+  // const login = createMutation( {
+  //    mutationFn:()=>{
+  //      api
+  //    }
+  //    ,
+  //    onSuccess: () => {
+
+  //    },
+  //    onError: () => {
+
+  //    }
+  // })
+
   function handleSubmit(event: Event) {
     event.preventDefault();
     console.log("Form submitted:", form);
   }
+
+
 </script>
 
 <main class="flex justify-center items-center min-h-screen   bg-gray-900">
@@ -38,7 +61,10 @@
       </form>
     </Content>
     <Footer>
-       <Button  type="submit" class="mt-2 text-center">Login</Button>
+       <Button  type="submit" class="w-full py-3 sm:py-4 text-sm sm:text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">Login</Button> 
+    </Footer>
+    <Footer>
+      <Button class="w-full py-3 sm:py-4 text-sm sm:text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"><Link to="/register">Register</Link></Button>
     </Footer>
   </Root>
 </main>
