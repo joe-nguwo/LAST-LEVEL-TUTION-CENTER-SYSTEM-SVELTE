@@ -83,7 +83,7 @@
         </div>
 
         <!-- Password & Confirm Password - Stack on mobile, side by side on sm+ -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div class="flex flex-col space-y-2">
           <div class="flex flex-col space-y-2">
             <label for="password" class="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700">
               <Lock class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />

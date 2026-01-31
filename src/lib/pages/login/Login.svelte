@@ -1,12 +1,12 @@
 <script lang="ts">
   import {Link}  from "svelte-routing"
-  import { createMutation } from "@tanstack/svelte-query";
+  import { createMutation} from "@tanstack/svelte-query";
   import { Root, Header, Title, Description, Content, Footer } from "$lib/components/ui/card/index.ts";
   import { Input } from "$lib/components/ui/input/index.ts";
   import { Button } from "$lib/components/ui/button/index.ts";
-  import { Mail, Lock }   from '@lucide/svelte';;
+  import { Mail, Lock }   from '@lucide/svelte';
   import type { LoginForm } from "@lib/types/auth.ts";
-  //import Auth from "../.."
+  import api from "../../api/endpoint"
   
 
   let form: LoginForm = $state({
@@ -14,22 +14,17 @@
     password: ""
   });
 
-  function api (){
 
-  }
 
-  // const login = createMutation( {
-  //    mutationFn:()=>{
-  //      api
-  //    }
-  //    ,
-  //    onSuccess: () => {
 
-  //    },
-  //    onError: () => {
 
-  //    }
-  // })
+  const login = createMutation(  ()=> ( {
+    mutationFn:()=> api.post("login",form)
+
+    }
+
+  
+  ))
 
   function handleSubmit(event: Event) {
     event.preventDefault();
