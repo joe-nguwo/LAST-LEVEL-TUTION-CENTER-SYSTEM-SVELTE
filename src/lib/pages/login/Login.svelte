@@ -5,7 +5,7 @@
   import { Input } from "$lib/components/ui/input/index.ts";
   import { Button } from "$lib/components/ui/button/index.ts";
   import { Mail, Lock }   from '@lucide/svelte';
-  import type { LoginForm } from "@lib/types/auth.ts";
+  import type { LoginForm } from "$lib/types/auth.ts";
   import api from "../../api/endpoint"
   
 
@@ -15,19 +15,20 @@
   });
 
 
-
-
-
   const login = createMutation(  ()=> ( {
-    mutationFn:()=> api.post("login",form)
+    mutationFn:(data:LoginForm)=> api.post("login", {data})
 
     }
 
-  
   ))
+
+
+
+  
 
   function handleSubmit(event: Event) {
     event.preventDefault();
+    login.mutate(form);
     console.log("Form submitted:", form);
   }
 
@@ -53,19 +54,16 @@
           <label for="password" class="mb-1 font-medium"><Lock/>Password:</label>
           <Input type="password" bind:value={form.password} id="password"  required />
         </div>
+         <Button  type="submit" class="w-full py-3 sm:py-4 text-sm sm:text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">Login</Button> 
+         <Button class="w-full py-3 sm:py-4 text-sm sm:text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"><Link to="/register">Register</Link></Button>
       </form>
     </Content>
-    <Footer>
-       <Button  type="submit" class="w-full py-3 sm:py-4 text-sm sm:text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">Login</Button> 
-    </Footer>
-    <Footer>
-      <Button class="w-full py-3 sm:py-4 text-sm sm:text-base font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"><Link to="/register">Register</Link></Button>
-    </Footer>
+
   </Root>
 </main>
 
 <style>
   main {
-    background-color:gray-950;
+    background-color:oklch(0.14 0.00 286);
   }
 </style>
