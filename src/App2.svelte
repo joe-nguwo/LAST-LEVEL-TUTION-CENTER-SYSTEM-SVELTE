@@ -17,9 +17,19 @@
     <Route path="/register" exact> 
         <Register />
     </Route>
-     <Route path="/dashboard" exact>
+     
+
+      // this is dashboard route
+     <SideBar>
+
+        <Route path="/dashboard" exact>
             <Dashboard/>
         </Route>
+   
+         <!-- <Route path="/dashboard" exact>
+            <Dashboard/>
+        </Route> -->
+     </SideBar>
 
     {:else}
   

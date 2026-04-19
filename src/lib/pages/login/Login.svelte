@@ -25,6 +25,15 @@
 
 )
 
+if(login.isSuccess){
+  //window.location.assign("/dashbaord")
+}
+else {
+    window.location.assign("/dashboard")
+
+
+}
+
 
 
   
@@ -34,6 +43,7 @@
     login.mutate(form);
     console.log("Form submitted:", form);
   }
+  
 
 
 </script>

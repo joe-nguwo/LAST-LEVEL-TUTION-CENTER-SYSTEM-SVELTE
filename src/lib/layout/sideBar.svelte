@@ -51,8 +51,8 @@
               DW
             </div>
             <div class="flex flex-col">
-              <span class="text-sm font-semibold">E-wallet</span>
-              <span class="text-xs text-muted-foreground">Secure Your Funds With US</span>
+              <span class="text-sm font-semibold">Last-Level Tution-center </span>
+              <span class="text-xs text-muted-foreground">THE BEST TUTION CENTER IN KANYAMA</span>
             </div>
             <!-- <ChevronDown class="ml-auto w-4 h-4" /> -->
           </div>
@@ -115,8 +115,8 @@
               <!-- <User class="w-4 h-4" /> -->
             </div>
             <div class="flex-1">
-              <div class="text-sm font-medium">John Doe</div>
-              <div class="text-xs text-muted-foreground">john@example.com</div>
+              <div class="text-sm font-medium">chuulu mainda </div>
+              <div class="text-xs text-muted-foreground">chuulumain@.com</div>
             </div>
             <!-- <ChevronUp class="w-4 h-4" /> -->
           </div>

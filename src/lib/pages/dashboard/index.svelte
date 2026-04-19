@@ -11,7 +11,7 @@
 </script>
 
 <main>
-  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30 p-4 md:p-6">
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30 p-4 md:p-6 bg-green">
   <div class="max-w-7xl mx-auto space-y-8">
     <!-- Header -->
     <div class="text-center md:text-left">
