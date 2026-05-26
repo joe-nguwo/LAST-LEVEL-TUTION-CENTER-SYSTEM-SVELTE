@@ -19,12 +19,10 @@
     email: "",
     password: "",
     firstName: "",
-    lastName: "",
-    confirmPassword: "",
+    lastName: ""
   });
 const register = createMutation(  ()=> ( {
-    mutationFn:(data:RegisterForm)=> api.post("login", {data})
-
+    mutationFn:(data:RegisterForm)=> api.post("register", {data})
     }
 
   ))
@@ -38,7 +36,7 @@ const register = createMutation(  ()=> ( {
 
 <main class="flex justify-center items-center min-h-screen bg-gray-900 p-4">
   <Root
-    class="w-[90vw] max-w-[700px] min-w-[320px] mx-auto p-6 sm:p-8 shadow-xl rounded-xl bg-white transition-all duration-300 hover:shadow-2xl border border-gray-200"
+    class="w-[100vw] max-w-[700px] min-w-[620px] mx-auto p-6 sm:p-8 shadow-xl rounded-xl bg-white transition-all duration-300 hover:shadow-2xl border border-gray-200"
   >
     <Header class="mb-6 sm:mb-8">
       <Title
@@ -134,24 +132,7 @@ const register = createMutation(  ()=> ( {
             />
           </div>
 
-          <div class="flex flex-col space-y-2">
-            <label
-              for="confirmPassword"
-              class="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700"
-            >
-              <Lock class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-              Confirm Password
-            </label>
-            <Input
-              type="password"
-              bind:value={form.confirmPassword}
-              id="confirmPassword"
-              required
-              class="w-full text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-3"
-              placeholder="Confirm password"
-            />
-          </div>
-        </div>
+     
 
         <!-- Submit Button -->
         <Footer class="pt-4 sm:pt-6">
