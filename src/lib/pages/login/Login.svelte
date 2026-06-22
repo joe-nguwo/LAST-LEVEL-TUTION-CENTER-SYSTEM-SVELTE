@@ -27,14 +27,13 @@
     mutationFn: (data: LoginForm) => api.post("login", { data }),
     onSuccess: (data) => {
       console.log("Login successful:", data);
-      auth.set(false); // Set auth to true on successful login
-  
-   navigate("/dashboard" ); // Redirect to dashboard after successful login
-      // Handle successful login, e.g., store token, redirect, etc.
+      auth.set(false); 
+       navigate("/dashboard",{replace:true} );
+     
     },
     onError: (error) => {
       console.error("Login failed:", error);
-      // Handle login error, e.g., show error message
+     
     },
   }));
   console.log(login.status);

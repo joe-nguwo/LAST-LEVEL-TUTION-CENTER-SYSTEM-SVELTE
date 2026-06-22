@@ -1,6 +1,6 @@
 <script lang="ts">
  import { createMutation} from "@tanstack/svelte-query";
-  import { Link } from "svelte-routing";
+  import { Link,navigate} from "svelte-routing";
   import {
     Root,
     Header,
@@ -14,6 +14,7 @@
   import { Mail, Lock, User } from "@lucide/svelte";
   import type { RegisterForm } from "$lib/types/auth.ts";
   import api from "../../api/endpoint"
+  import { auth } from "$lib/stores/stores";
 
   let form: RegisterForm = $state({
     email: "",
@@ -22,8 +23,14 @@
     lastName: ""
   });
 const register = createMutation(  ()=> ( {
-    mutationFn:(data:RegisterForm)=> api.post("register", {data})
+    mutationFn:(data:RegisterForm)=> api.post("register", {data}),
+    onSuccess(data:any){
+       auth.set(false)
+        navigate("/dashboard",{replace:true} );
+      
     }
+    }
+    
 
   ))
 
@@ -151,6 +158,7 @@ const register = createMutation(  ()=> ( {
             <Link to="/">Login</Link>
           </Button>
         </Footer>
+      </div>
       </form>
     </Content>
   </Root>

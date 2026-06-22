@@ -4,13 +4,12 @@
   import LoginPage from "$lib/pages/login/Login.svelte";
   import Dashboard from "./lib/pages/dashboard/index.svelte";
   import Register from "$lib/pages/login/register.svelte";
-  import { auth as isauth } from "$lib/stores/stores";
-
+  import { auth as notAuth } from "$lib/stores/stores";
 </script>
 
 <main>
   <Router>
-    {#if $isauth}
+    {#if $notAuth}
       <Route path="/" exact>
         <LoginPage />
       </Route>
@@ -18,11 +17,11 @@
         <Register />
       </Route>
     {:else}
-      <SideBar>
-        <Route path="/dashboard" exact>
+      <Route path="/dashboard" exact>
+        <SideBar>
           <Dashboard />
-        </Route>
-      </SideBar>
+        </SideBar>
+      </Route>
     {/if}
   </Router>
 </main>

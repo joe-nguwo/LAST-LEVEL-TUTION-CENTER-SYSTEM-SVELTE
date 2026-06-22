@@ -7,7 +7,7 @@ type FetchRecord = {
   data?: Record<string, unknown> | FormData;
 };
 type Response<T> = {
-  status: number;
+//  status: number;
   message: string;
   data?: T;
 };
@@ -54,11 +54,11 @@ const fetcher = async <T>(
 
   const server_response: Response<T> = await res.json();
   if (res.ok) {
-    if (server_response.status == 0) {
-      return server_response?.data as T;
-    } else {
-      throw new Error(server_response?.message || "Unknown error occurred");
-    }
+    // if (server_response.status == 0) {
+       return server_response?.data as T;
+    // } else {
+    //   throw new Error(server_response?.message || "Unknown error occurred");
+    // }
   } else {
     throw new Error(server_response.message || "something went wrong");
   }
