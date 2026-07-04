@@ -11,6 +11,9 @@
   import SidebarMenu from "./ui/sidebar/sidebar-menu.svelte";
   import SidebarMenuItem from "./ui/sidebar/sidebar-menu-item.svelte";
   import SidebarMenuButton from "./ui/sidebar/sidebar-menu-button.svelte";
+  import { navItems } from "$lib/types/navLinks";
+  
+
 </script>
 
 <main>
@@ -19,13 +22,18 @@
     <SidebarContent>
       <SidebarGroup>
       <SidebarGroupLabel>NAV LINKS BELOW </SidebarGroupLabel>
-      <SidebarMenu>
-      <SidebarMenuItem>
+     <SidebarMenu>
+  {#each navItems as item}
+    <SidebarMenuItem>
+      <Link to={item.href}>
         <SidebarMenuButton>
-        <Link to="/dashboard">Dashboard</Link>
+          <item.icon class="h-5 w-5" />
+          <span>{item.title}</span>
         </SidebarMenuButton>
-      </SidebarMenuItem>
-      </SidebarMenu>
+      </Link>
+    </SidebarMenuItem>
+  {/each}
+</SidebarMenu>
       </SidebarGroup>
     </SidebarContent>
     <SidebarFooter>footer</SidebarFooter>

@@ -9,19 +9,19 @@
 
 <main>
   <Router>
-    {#if $notAuth}
+    
       <Route path="/" exact>
         <LoginPage />
       </Route>
       <Route path="/register" exact>
         <Register />
       </Route>
-    {:else}
+    
       <Route path="/dashboard" exact>
         <SideBar>
           <Dashboard />
         </SideBar>
       </Route>
-    {/if}
+    
   </Router>
 </main>
