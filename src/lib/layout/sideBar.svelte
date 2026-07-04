@@ -9,9 +9,6 @@ import AppSideBar  from "$lib/components/appSideBar.svelte"
     </AppSideBar>
       <SidebarTrigger/>
      <main class="py-40"> 
-  
-    
-  
         {@render children()}
     </main>
 

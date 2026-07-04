@@ -31,7 +31,7 @@ const fetcher = async <T>(
       temp.body = options.data;
     }
   }
-  const baseUrl =  "http://localhost:3000"
+  const baseUrl =  "http://localhost:8000"
   let _endpoint = ROUTES[endpoint];
 
   if (options?.queries) {
