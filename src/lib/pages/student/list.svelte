@@ -2,6 +2,7 @@
 import { createQuery } from "@tanstack/svelte-query";
 import Skeleton from "$lib/components/ui/skeleton/skeleton.svelte";
 import Button from "$lib/components/ui/button/button.svelte";
+
 </script>
 
 <main class="">

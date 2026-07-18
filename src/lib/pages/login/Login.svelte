@@ -14,7 +14,7 @@
   import { Button } from "$lib/components/ui/button/index.ts";
   import { Mail, Lock } from "@lucide/svelte";
   import type { LoginForm } from "$lib/types/auth.ts";
-  import api from "../../api/endpoint";
+  import api from "$lib/api/endpoint";
   import { auth } from "$lib/stores/stores";
 
 
