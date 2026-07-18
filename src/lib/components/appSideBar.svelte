@@ -12,9 +12,12 @@
   import SidebarMenuItem from "./ui/sidebar/sidebar-menu-item.svelte";
   import SidebarMenuButton from "./ui/sidebar/sidebar-menu-button.svelte";
 
-  import { Link } from "svelte-routing";
+  import { Link,Route } from "svelte-routing";
   import { navItems } from "$lib/types/navLinks";
+  
+  
 </script>
+
 
 <Sidebar class="h-screen border-r bg-background">
   <div class="flex h-full flex-col gap-6">
