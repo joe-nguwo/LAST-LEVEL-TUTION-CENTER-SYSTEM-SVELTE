@@ -5,8 +5,16 @@
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
      import api from "$lib/api/endpoint";
+   type Form = {
+    firstName: string;
+    middleName: string;
+    lastName: string;
+    email: string;
+    contact: string;
+    address: string;
+};
 
-	let form = $state({
+	let form:Form = $state({
         firstName:"",
         middleName:"",
         lastName:"",
@@ -15,17 +23,20 @@
         address:""
 
     })
-    // const{} = createMutation({
-    //     mut
-    // })
+    const add = createMutation(()=> ({
+         mutationFn:(data:Form)=> api.post("addStudent",{data}),
+         onSuccess:(data)=>{
+            console.log("success")
+            alert("good")
+
+         }
+    }))
 
 	function addStudent(e :Event) {
         e.preventDefault();
-        console.log("Adding student:", form);
-        console.log(form.firstName, form.middleName, form.lastName, form.email, form.contact, form.address);
-       
-		
-	}
+        add.mutate(form)
+    }
+
 </script>
 
 <Dialog.Root>

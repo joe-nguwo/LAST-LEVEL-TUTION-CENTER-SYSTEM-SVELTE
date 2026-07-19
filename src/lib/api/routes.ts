@@ -4,7 +4,7 @@ export const ROUTES = {
  // Dashboard Stats 
  dashBoardStats:"/api/v1/admin/auth/dashStats",
  // students
- addStudent:"/api/v1/admin/auth/students"
+ addStudent:"/api/v1/admin/auth/student"
 
 };
 
