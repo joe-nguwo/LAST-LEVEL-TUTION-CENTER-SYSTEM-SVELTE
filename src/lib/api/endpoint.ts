@@ -7,7 +7,7 @@ type FetchRecord = {
   data?: Record<string, unknown> | FormData;
 };
 type Response<T> = {
-//  status: number;
+ status: number;
   message: string;
   data?: T;
 };

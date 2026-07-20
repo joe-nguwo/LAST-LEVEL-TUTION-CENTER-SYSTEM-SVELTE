@@ -8,7 +8,7 @@ import AppSideBar  from "$lib/components/appSideBar.svelte"
     <AppSideBar>
     </AppSideBar>
       <SidebarTrigger/>
-     <main class="py-40"> 
+     <main class=" w-full py-40"> 
         {@render children()}
     </main>
 

@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
   import { createQuery } from "@tanstack/svelte-query";
   import api from "../../api/endpoint";
 
@@ -18,4 +18,4 @@
 {/if}
 THIS IS DASHBOARD
 
-</main>
+</main> -->
