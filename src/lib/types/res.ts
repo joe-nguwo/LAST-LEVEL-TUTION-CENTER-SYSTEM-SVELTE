@@ -14,6 +14,6 @@ export type Student = {
 };
 
 export type StudentsResponse = {
-  students: Student[];
+  data: Student[];
   message:string
 };
