@@ -1,6 +1,6 @@
 <script lang="ts">
   import { QueryClient, QueryClientProvider } from "@tanstack/svelte-query";
-  import App2 from "./App2.svelte";
+  import App2 from "./routes.svelte";
 
   const queryClient = new QueryClient({
     defaultOptions:{
