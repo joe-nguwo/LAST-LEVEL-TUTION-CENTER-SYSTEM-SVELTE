@@ -3,14 +3,16 @@
   import Skeleton from "$lib/components/ui/skeleton/skeleton.svelte";
   import Button from "$lib/components/ui/button/button.svelte";
   import api from "$lib/api/endpoint";
-  import { type StudentsResponse } from "$lib/types/res";
+  import { type Student } from "$lib/types/res";
 
   
   const query = createQuery(() => ({
     queryKey: ["students"],
     queryFn: async () => {
-      const response: StudentsResponse[] = await api.get("allStudent");
+      const response:  Student[] = await api.get("allStudent");
+      console.log("data",response)
       return response;
+    
     },
   }));
 
@@ -46,11 +48,11 @@
           
               <td scope="row" class="flex items-center px-6 py-4 text-heading whitespace-nowrap">
                 <div class="w-10 h-10 rounded-full bg-neutral-200 flex items-center justify-center font-bold text-xs uppercase">
-                  {student.fname[0] || ''}{student.lname[0] || ''}
+               
                 </div>
                 <div class="ps-3">
                   <div class="text-base font-semibold">{student.fname} {student.lname}</div>
-                  <div class="font-normal text-body text-xs">{student.email}</div>
+                
                 </div>
               </td>
          

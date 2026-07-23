@@ -2,7 +2,7 @@
   import { Router, Route } from "svelte-routing";
   import SideBar from "$lib/layout/sideBar.svelte";
   import LoginPage from "$lib/pages/login/Login.svelte";
-  import Dashboard from "./lib/pages/dashboard/index.svelte";
+  import Dashboard from "$lib/pages/dashboard/index.svelte";
   import Register from "$lib/pages/login/register.svelte";
   import Student from "$lib/pages/student/index.svelte"
   // import Books from "$lib/pages/books/index.svelte"
